@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{809FB1F2-EE58-44C9-977C-E213A7893C46}</ProjectGuid>
+    <ProjectGuid>{D67D61BE-AEEC-44FC-9E75-9D97E5E74222}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleMenues</RootNamespace>
-    <AssemblyName>ConsoleMenues</AssemblyName>
+    <RootNamespace>Ex04.Menus.Interfaces</RootNamespace>
+    <AssemblyName>Ex04.Menus.Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
