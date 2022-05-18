@@ -11,7 +11,7 @@
 
         public event ClickedInvoker m_ClickedInvoker;
 
-        public string Title { get; private set; }
+        public string Title { get; set; }
 
         public void PerformClick()
         {

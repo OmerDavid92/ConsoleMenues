@@ -39,6 +39,7 @@
         {
             MainMenu subMenu = new MainMenu(i_Title);
             subMenu.PrevMenu = this;
+            subMenu.GetItems[0].Title = "Back";
             m_Menus.Add(subMenu);
 
             return subMenu;
@@ -52,15 +53,15 @@
             return item;
         }
 
-        private void BackOrExit()
+        public void BackOrExit()
         {
             if (PrevMenu != null)
             {
-                PrevMenu.Initiate();
+                Console.WriteLine("Back to {0}...", PrevMenu.Title);
             }
         }
 
-        public void ReportClick()
+        public void ReportClick(string i_SelectedItem)
         {
             BackOrExit();
         }
@@ -75,17 +76,21 @@
 
         public void PrintMenu()
         {
+            Console.WriteLine("**{0}**", Title);
+            Console.WriteLine("----------------------");
+
             for (int i = 0; i < m_Menus.Count; i++)
             {
-                Console.WriteLine("{0} - {1}", i + 1, m_Menus[i].Title);
+                Console.WriteLine("{0} -> {1}", i + 1, m_Menus[i].Title);
             }
 
             for (int i = 1; i < m_Items.Count; i++)
             {
-                Console.WriteLine("{0} - {1}", i + m_Menus.Count, m_Items[i].Title);
+                Console.WriteLine("{0} -> {1}", i + m_Menus.Count, m_Items[i].Title);
             }
 
-            Console.WriteLine("0 - {0}", m_Items[0].Title);
+            Console.WriteLine("0 -> {0}", m_Items[0].Title);
+            Console.WriteLine("----------------------");
         }
 
         // [0] Exit/Back [1....X] m_Menus [X+1....END] m_Items
@@ -97,11 +102,13 @@
             }
             else if (i_UserInput <= m_Menus.Count)
             {
-                m_Menus[i_UserInput].Initiate();
+                m_Menus[i_UserInput - 1].Initiate();
+                Initiate();
             }
             else if (i_UserInput > m_Menus.Count)
             {
                 m_Items[i_UserInput - m_Menus.Count].PerformClick();
+                Initiate();
             }
         }
 
@@ -110,8 +117,6 @@
             string userInput = string.Empty;
             int menuSelection = 0;
             
-            Console.WriteLine(Title);
-            Console.WriteLine("Please choose one of the followings:");
             PrintMenu();
             userInput = Console.ReadLine();
             

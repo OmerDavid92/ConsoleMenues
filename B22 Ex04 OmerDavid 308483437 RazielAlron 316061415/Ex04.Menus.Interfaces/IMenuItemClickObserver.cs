@@ -1,7 +1,7 @@
 ﻿namespace Ex04.Menus.Interfaces
 {
-    interface IMenuItemClickObserver
+    public interface IMenuItemClickObserver
     {
-        void ReportClick();
+        void ReportClick(string i_SelectedItem);
     }
 }

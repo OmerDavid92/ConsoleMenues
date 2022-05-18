@@ -10,9 +10,9 @@
             Title = i_Title;
         }
 
-        private readonly List<IMenuItemClickObserver> m_ClickedObserver;
+        private readonly List<IMenuItemClickObserver> m_ClickedObserver = new List<IMenuItemClickObserver>();
 
-        public string Title { get; private set; }
+        public string Title { get; set; }
 
         public void AddClickObserver(IMenuItemClickObserver i_ClickObserver)
         {
@@ -33,7 +33,7 @@
         {
             foreach (IMenuItemClickObserver clickedObserver in m_ClickedObserver)
             {
-                clickedObserver.ReportClick();
+                clickedObserver.ReportClick(Title);
             }
         }
     }
