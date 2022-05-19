@@ -2,7 +2,7 @@
 {
     using Ex04.Menus.Delegates;
 
-    class DelegateMenu
+    public class DelegateMenu
     {
         private readonly MainMenu m_MainMenu = new MainMenu("Delegates Main Menu");
 

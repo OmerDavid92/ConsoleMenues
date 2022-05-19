@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+
     public class MainMenu : IMenuItemClickObserver
     {
         private readonly List<MainMenu> m_Menus = new List<MainMenu>();
@@ -96,6 +97,8 @@
         // [0] Exit/Back [1....X] m_Menus [X+1....END] m_Items
         public void HandleValidInput(int i_UserInput)
         {
+            Console.Clear();
+
             if (i_UserInput == 0)
             {
                 m_Items[0].PerformClick();
@@ -103,11 +106,13 @@
             else if (i_UserInput <= m_Menus.Count)
             {
                 m_Menus[i_UserInput - 1].Initiate();
+                Console.WriteLine();
                 Initiate();
             }
             else if (i_UserInput > m_Menus.Count)
             {
                 m_Items[i_UserInput - m_Menus.Count].PerformClick();
+                Console.WriteLine();
                 Initiate();
             }
         }

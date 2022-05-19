@@ -2,7 +2,7 @@
 {
     using Ex04.Menus.Interfaces;
 
-    class InterfaceMenu : IMenuItemClickObserver
+    public class InterfaceMenu : IMenuItemClickObserver
     {
         private readonly MainMenu m_MainMenu = new MainMenu("Interfaces Main Menu");
 

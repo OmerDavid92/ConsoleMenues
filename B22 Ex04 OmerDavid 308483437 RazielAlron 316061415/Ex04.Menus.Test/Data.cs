@@ -2,7 +2,7 @@
 
 namespace Ex04.Menus.Test
 {
-    class Data
+    public class Data
     {
         public static readonly string SubMenu1 = "Show Date/Time";
         public static readonly string SubMenu2 = "Version and Spaces";
@@ -20,7 +20,7 @@ namespace Ex04.Menus.Test
 
         public static void ShowDate()
         {
-            DateTime localDate = DateTime.Now.ToLocalTime(); ;
+            DateTime localDate = DateTime.Now.ToLocalTime();
 
             Console.WriteLine("Current Date: {0}", localDate.Date.ToString("dd/MM/yyy"));
         }
